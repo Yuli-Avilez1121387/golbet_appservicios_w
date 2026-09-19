@@ -24,13 +24,20 @@ public class MatchRepository : GenericRepository<Match>, IMatchRepository
             query = query.Where(m => m.Status == status.Value);
 
         return await query.OrderBy(m => m.Date).ToListAsync();
+        // Select * From Matches
     }
 
     public async Task<Match?> GetByIdWithDetailsAsync(int id)
-        => await _dbSet
+    {
+        var query = await _dbSet
+            .Where(m => m.Id == id)
             .Include(m => m.HomeTeam)
             .Include(m => m.AwayTeam)
             .Include(m => m.Bets)
             .AsNoTracking()
-            .FirstOrDefaultAsync(m => m.Id == id);
+            .FirstOrDefaultAsync();
+        // Select * From Matches
+
+        return query;
+    }
 }
