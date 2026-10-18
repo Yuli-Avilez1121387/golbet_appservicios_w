@@ -30,4 +30,3 @@ public class MatchFormDto
     [Range(1.01, 999.99, ErrorMessage = "La cuota debe ser mayor que 1.00")]
     public decimal AwayOdds { get; set; } = 3.50m;
 }
-

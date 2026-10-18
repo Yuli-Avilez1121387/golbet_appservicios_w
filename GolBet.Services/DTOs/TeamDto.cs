@@ -9,4 +9,3 @@ public class TeamDto
     public string? CrestUrl { get; set; }
     public bool IsActive { get; set; }
 }
-

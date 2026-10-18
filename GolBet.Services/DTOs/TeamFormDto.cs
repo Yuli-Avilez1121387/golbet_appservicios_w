@@ -21,4 +21,3 @@ public class TeamFormDto
     [Display(Name = "URL del escudo (opcional)")]
     public string? CrestUrl { get; set; }
 }
-

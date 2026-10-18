@@ -31,7 +31,7 @@ public class MatchService : IMatchService
         var match = await _matchRepository.GetByIdWithDetailsAsync(id);
 
         return match is null ? null : _mapper.Map<MatchDetailDto>(match);
-        //IF TERNARIO
+        // IF TERNARIO
     }
 
     public async Task<MatchFormDto?> GetForEditAsync(int id)
@@ -43,7 +43,6 @@ public class MatchService : IMatchService
         dto.Date = dto.Date.ToColombiaTime();        // UTC (DB) -> local (form)
         return dto;
     }
-
 
     public async Task CreateAsync(MatchFormDto dto)
     {

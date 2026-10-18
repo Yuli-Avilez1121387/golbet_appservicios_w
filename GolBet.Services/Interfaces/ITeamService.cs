@@ -11,4 +11,3 @@ public interface ITeamService
     Task UpdateAsync(TeamFormDto dto);
     Task DeactivateAsync(int id);
 }
-
